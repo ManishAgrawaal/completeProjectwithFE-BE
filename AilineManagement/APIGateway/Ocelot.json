@@ -1,0 +1,32 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Instrument/ShowData",
+      "Downstreamscheme": "https",
+      "ServiceName": "AirlineService",
+      "UpstreamPathTemplate": "/api/gatway/Airline/Instrument",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+
+      "UpstreamPathTemplate": "/api/gatway/Instrument/ShowData",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    //"BaseUrl": "BaseUrl": "https://localhost:44398"
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}
+
+
+
+
+
+
+
